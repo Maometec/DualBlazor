@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="DualBlazor.Client/DualBlazor.Client.csproj" />
+  <Project Path="DualBlazor.Server/DualBlazor.Server.csproj" />
+  <Project Path="DualBlazor.Shared/DualBlazor.Shared.csproj" Id="7902156c-c79c-4e8d-8b14-1a27d3550b7b" />
+</Solution>
