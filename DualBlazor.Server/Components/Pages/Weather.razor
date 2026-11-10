@@ -1,9 +1,7 @@
 ﻿@page "/admin/weather"
 @using DualBlazor.Shared.Models
 
-<PageTitle>Weather – Admin | Dual Blazor</PageTitle>
-
-<h1>Weather</h1>
+<PageTitle>@title - Admin | Dual Blazor</PageTitle>
 
 <p>This component demonstrates showing data.</p>
 
@@ -38,9 +36,15 @@ else
 
 @code {
     private WeatherForecast[]? forecasts;
+    private string title = "Weather";
+
+    [CascadingParameter]
+    public EventCallback<string> OnLoaded { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
+        await OnLoaded.InvokeAsync(title);
+
         // Simulate asynchronous loading to demonstrate streaming rendering
         await Task.Delay(500);
 
